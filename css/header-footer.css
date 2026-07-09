@@ -595,3 +595,120 @@
     line-height: 1.55;
   }
 }
+
+/* Mobile header/footer correction: match normal mobile web header height and compact footer spacing */
+@media (max-width: 640px) {
+  .site-header .container {
+    width: calc(100% - 28px);
+    max-width: 720px;
+  }
+
+  .navbar {
+    min-height: 62px;
+  }
+
+  .brand-logo-shell {
+    width: 48px;
+    height: 48px;
+  }
+
+  .nav-toggle {
+    width: 46px;
+    height: 46px;
+    border-radius: 16px;
+    box-shadow: 0 10px 20px rgba(25, 72, 95, 0.11);
+  }
+
+  .nav-toggle span,
+  .nav-toggle::before,
+  .nav-toggle::after {
+    width: 22px;
+    height: 2px;
+    margin: 5px auto;
+  }
+
+  .nav-toggle[aria-expanded="true"]::before {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .nav-toggle[aria-expanded="true"]::after {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  .footer {
+    padding: 12px 0 10px;
+  }
+
+  .footer .container {
+    width: calc(100% - 28px);
+    max-width: 720px;
+  }
+
+  .footer-container {
+    gap: 14px;
+    padding: 0 0 12px;
+  }
+
+  .footer-brand {
+    gap: 9px;
+    margin-bottom: 4px;
+  }
+
+  .footer-brand img {
+    width: 34px;
+    height: 34px;
+    flex-basis: 34px;
+  }
+
+  .footer h2 {
+    font-size: 1.12rem;
+    line-height: 1.12;
+  }
+
+  .footer h3 {
+    margin: 0 0 8px;
+    font-size: 1.02rem;
+    line-height: 1.18;
+  }
+
+  .footer section > p {
+    margin: 0;
+  }
+
+  .footer nav ul {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6px 13px;
+  }
+
+  .footer section ul {
+    display: grid;
+    gap: 7px;
+  }
+
+  .footer li {
+    margin: 0;
+  }
+
+  .footer p,
+  .footer a {
+    font-size: 0.9rem;
+    line-height: 1.35;
+  }
+
+  .footer a {
+    gap: 8px;
+  }
+
+  .footer a i {
+    flex: 0 0 1.05em;
+    width: 1.05em;
+    margin-top: 0.12em;
+  }
+
+  .footer-bottom {
+    padding-top: 10px;
+    font-size: 0.82rem;
+    line-height: 1.38;
+  }
+}
