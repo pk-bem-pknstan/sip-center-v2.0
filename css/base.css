@@ -131,3 +131,39 @@ img {
     scroll-behavior: auto !important;
   }
 }
+
+/* Disable hover/motion feedback on touch/mobile screens */
+@media (hover: none), (pointer: coarse), (max-width: 768px) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition-duration: 0s !important;
+  }
+
+  .btn:hover,
+  .nav-link:hover,
+  .footer a:hover,
+  .card:hover,
+  .service-card:hover,
+  .study-showcase-card:hover,
+  .competition-card:hover,
+  .comp-card:hover,
+  .instagram-photo:hover,
+  .instagram-manual-grid .sbi_photo:hover,
+  .calendar-nav:hover {
+    transform: none !important;
+  }
+
+  .btn:hover::before,
+  .nav-link:hover::before {
+    opacity: 0 !important;
+  }
+
+  .instagram-photo:hover img,
+  .instagram-manual-grid .sbi_photo:hover img,
+  .study-showcase-card:hover .study-card-media img {
+    transform: none !important;
+    filter: none !important;
+  }
+}

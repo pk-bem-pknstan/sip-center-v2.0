@@ -509,3 +509,89 @@
     flex-basis: 42px;
   }
 }
+
+/* Final mobile consistency polish */
+@media (max-width: 640px) {
+  .site-header .container {
+    width: min(94%, 720px);
+  }
+
+  .navbar {
+    min-height: 48px;
+  }
+
+  .brand-logo-shell {
+    width: 38px;
+    height: 38px;
+  }
+
+  .nav-toggle {
+    width: 38px;
+    height: 38px;
+    border-radius: 14px;
+    box-shadow: 0 8px 18px rgba(25, 72, 95, 0.10);
+  }
+
+  .nav-toggle span,
+  .nav-toggle::before,
+  .nav-toggle::after {
+    width: 19px;
+    height: 2px;
+    margin: 4px auto;
+  }
+
+  .footer {
+    padding: 34px 0 14px;
+  }
+
+  .footer .container {
+    width: min(92%, 720px);
+  }
+
+  .footer-container {
+    gap: 16px;
+    padding: 0 6px 18px;
+  }
+
+  .footer-brand {
+    gap: 8px;
+    margin-bottom: 7px;
+  }
+
+  .footer-brand img {
+    width: 30px;
+    height: 30px;
+    flex-basis: 30px;
+  }
+
+  .footer h2 {
+    font-size: 1.02rem;
+    line-height: 1.15;
+  }
+
+  .footer h3 {
+    margin-bottom: 9px;
+    font-size: 0.96rem;
+    line-height: 1.15;
+  }
+
+  .footer p,
+  .footer a {
+    font-size: 0.82rem;
+    line-height: 1.45;
+  }
+
+  .footer li {
+    margin-bottom: 6px;
+  }
+
+  .footer a {
+    gap: 8px;
+  }
+
+  .footer-bottom {
+    padding-top: 14px;
+    font-size: 0.74rem;
+    line-height: 1.55;
+  }
+}

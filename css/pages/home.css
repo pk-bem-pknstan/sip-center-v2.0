@@ -661,3 +661,37 @@
     opacity: 1;
   }
 }
+
+/* Final mobile Instagram and spacing consistency */
+@media (max-width: 520px) {
+  .instagram-card {
+    margin-top: 26px;
+    padding: 28px 18px;
+    border-radius: 28px;
+  }
+
+  .instagram-section-head h2 {
+    font-size: clamp(1.65rem, 5.8vw, 2rem);
+    line-height: 1.28;
+  }
+
+  .instagram-section-head p {
+    font-size: clamp(0.92rem, 3.7vw, 1.05rem);
+    line-height: 1.75;
+  }
+
+  .instagram-section-head::after {
+    margin-top: 18px;
+  }
+
+  .instagram-profile {
+    gap: 12px;
+    margin: 20px 0 18px;
+  }
+
+  .instagram-profile img {
+    width: 46px;
+    height: 46px;
+    flex-basis: 46px;
+  }
+}

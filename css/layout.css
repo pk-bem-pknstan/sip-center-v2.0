@@ -399,3 +399,15 @@ body[data-page="home"] .hero-subtitle {
     padding-bottom: 124px;
   }
 }
+
+/* Final mobile home spacing */
+@media (max-width: 520px) {
+  body[data-page="home"] .hero {
+    padding-top: 32px;
+    padding-bottom: 154px;
+  }
+
+  body[data-page="home"] .hero-content {
+    transform: none;
+  }
+}
