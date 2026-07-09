@@ -1,0 +1,24 @@
+.kti-card {
+  display: flex;
+  flex-direction: column;
+}
+.kti-icon {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  margin-bottom: 15px;
+  border-radius: 12px;
+  background: #e8f2f6;
+  color: var(--primary-dark);
+  font-size: 1.35rem;
+  transition:
+    transform 0.35s ease,
+    background 0.35s ease,
+    color 0.35s ease;
+}
+.kti-card:hover .kti-icon {
+  transform: rotate(-7deg) scale(1.1);
+  background: var(--primary-dark);
+  color: var(--accent-lime);
+}

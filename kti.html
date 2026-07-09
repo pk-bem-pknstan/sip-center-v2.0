@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Repositori Karya Tulis Ilmiah - BEM PKN STAN</title>
+    <meta
+      name="description"
+      content="Cari karya tulis ilmiah mahasiswa PKN STAN berdasarkan judul, penulis, atau tema."
+    />
+    <meta name="theme-color" content="#19485f" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Repositori Karya Tulis Ilmiah - BEM PKN STAN"
+    />
+    <meta
+      property="og:description"
+      content="Repositori pencarian karya tulis ilmiah mahasiswa PKN STAN."
+    />
+    <meta property="og:url" content="https://DOMAIN-WEBSITE/kti.html" />
+    <link rel="canonical" href="https://DOMAIN-WEBSITE/kti.html" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <script type="module" src="./js/script.js?v=20260709-ps-links-ig-ratio-footer"></script>
+    <link rel="stylesheet" href="./css/style.css?v=20260709-ps-links-ig-ratio-footer" />
+    <link rel="icon" type="image/x-icon" href="./image/PK.ico" />
+  </head>
+  <body data-page="kti">
+    <div data-include="header"></div>
+    <section class="hero">
+      <div class="hero-decor" aria-hidden="true">
+        <img
+          src="./image/decor/aries.svg"
+          class="hero-ornament decor-aries"
+          alt=""
+        />
+        <img
+          src="./image/decor/taurus.svg"
+          class="hero-ornament decor-taurus"
+          alt=""
+        />
+        <img
+          src="./image/decor/element1.svg"
+          class="hero-ornament decor-e1"
+          alt=""
+        />
+        <img
+          src="./image/decor/element2.svg"
+          class="hero-ornament decor-e2"
+          alt=""
+        />
+        <img
+          src="./image/decor/element4.svg"
+          class="hero-ornament decor-e4"
+          alt=""
+        />
+        <img
+          src="./image/decor/element7.svg"
+          class="hero-ornament decor-e7"
+          alt=""
+        />
+        <img
+          src="./image/decor/element9.svg"
+          class="hero-ornament decor-e9"
+          alt=""
+        />
+      </div>
+      <div class="container hero-content">
+        <div class="glass-badge">Sinergi Informasi Pendidikan</div>
+        <h1 class="hero-title">Karya Tulis Ilmiah</h1>
+        <p class="hero-subtitle">Repositori hasil karya mahasiswa PKN STAN</p>
+      </div>
+    </section>
+    <main class="main-section">
+      <div class="container">
+        <section class="glass-card" aria-labelledby="kti-heading">
+          <div class="toolbar">
+            <div class="field">
+              <label for="kti-search">Cari karya tulis</label
+              ><input
+                class="input"
+                id="kti-search"
+                type="search"
+                placeholder="Cari judul karya tulis, penulis, atau tema..."
+              />
+            </div>
+          </div>
+          <div class="result-bar">
+            <h2 class="section-heading" id="kti-heading">
+              Eksplorasi Karya Ilmiah
+            </h2>
+            <span class="result-count" id="kti-count" aria-live="polite"
+              >0 karya</span
+            >
+          </div>
+          <div class="data-grid" id="kti-grid" aria-live="polite"></div>
+          <a class="back-link" href="./index.html">
+            <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+            <span>Kembali ke Beranda</span>
+          </a>
+        </section>
+      </div>
+    </main>
+    <div data-include="footer"></div>
+  </body>
+</html>

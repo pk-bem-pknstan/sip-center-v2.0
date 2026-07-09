@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sinergi Informasi Pendidikan PKN STAN</title>
+    <meta
+      name="description"
+      content="Pusat informasi akademik dan pendidikan BEM PKN STAN, termasuk kalender akademik dan layanan mahasiswa."
+    />
+    <meta name="theme-color" content="#19485f" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Sinergi Informasi Pendidikan PKN STAN" />
+    <meta
+      property="og:description"
+      content="Pusat informasi akademik dan pendidikan BEM PKN STAN."
+    />
+    <meta property="og:url" content="https://DOMAIN-WEBSITE/index.html" />
+    <link rel="canonical" href="https://DOMAIN-WEBSITE/index.html" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link rel="icon" type="image/x-icon" href="./image/PK.ico" />
+    <link rel="stylesheet" href="./css/style.css?v=20260709-ps-links-ig-ratio-footer" />
+    <script type="module" src="./js/script.js?v=20260709-ps-links-ig-ratio-footer"></script>
+  </head>
+  <body data-page="home">
+    <div data-include="header"></div>
+
+    <section class="hero hero-home">
+      <div class="hero-decor" aria-hidden="true">
+        <img
+          src="./image/decor/aries.svg"
+          class="hero-ornament decor-aries"
+          alt=""
+        />
+        <img
+          src="./image/decor/taurus.svg"
+          class="hero-ornament decor-taurus"
+          alt=""
+        />
+        <img
+          src="./image/decor/element1.svg"
+          class="hero-ornament decor-e1"
+          alt=""
+        />
+        <img
+          src="./image/decor/element2.svg"
+          class="hero-ornament decor-e2"
+          alt=""
+        />
+        <img
+          src="./image/decor/element4.svg"
+          class="hero-ornament decor-e4"
+          alt=""
+        />
+        <img
+          src="./image/decor/element7.svg"
+          class="hero-ornament decor-e7"
+          alt=""
+        />
+        <img
+          src="./image/decor/element9.svg"
+          class="hero-ornament decor-e9"
+          alt=""
+        />
+      </div>
+
+      <div class="container hero-content">
+        <div class="glass-badge">BEM PKN STAN</div>
+        <h1 class="hero-title">Sinergi Informasi Pendidikan<br />Center</h1>
+        <p class="hero-subtitle">
+          Web Pusat Informasi Akademik dan Pendidikan PKN STAN
+        </p>
+        <div class="button-group">
+          <a
+            href="https://lms.pknstan.ac.id"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-primary"
+            ><i class="fa-regular fa-folder" aria-hidden="true"></i>Bahan Ajar</a
+          >
+          <a href="./layanan.html" class="btn btn-glass"
+            ><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i
+            >Layanan Akademik</a
+          >
+          <a href="./info-lomba.html" class="btn btn-glass"
+            ><i class="fa-solid fa-trophy" aria-hidden="true"></i>Info Lomba</a
+          >
+          <a href="./pusat-studi.html" class="btn btn-glass"
+            ><i class="fa-solid fa-lightbulb" aria-hidden="true"></i>Pusat
+            Studi</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <main class="main-section">
+      <div class="container">
+        <section
+          class="glass-card content-card calendar-card"
+          aria-labelledby="calendar-heading"
+        >
+          <h2 id="calendar-heading">Kalender Kegiatan Akademik</h2>
+          <p class="calendar-subtitle">
+            Kalender akademik PKN STAN dan periode pendaftaran lomba yang sedang
+            terbuka.
+          </p>
+          <div class="calendar-wrapper">
+            <div class="calendar-left">
+              <div class="calendar-header">
+                <button
+                  class="calendar-nav"
+                  type="button"
+                  id="prevMonthBtn"
+                  aria-label="Bulan sebelumnya"
+                >
+                  &#9664;
+                </button>
+                <h3 id="monthYear"></h3>
+                <button
+                  class="calendar-nav"
+                  type="button"
+                  id="nextMonthBtn"
+                  aria-label="Bulan berikutnya"
+                >
+                  &#9654;
+                </button>
+              </div>
+              <div
+                class="calendar-grid"
+                id="calendar"
+                aria-label="Kalender bulanan"
+              ></div>
+              <ul class="legend" aria-label="Keterangan warna kalender">
+                <li><span class="legend-swatch"></span>Akademik</li>
+                <li><span class="legend-swatch libur"></span>Libur</li>
+                <li><span class="legend-swatch ujian"></span>Ujian</li>
+                <li>
+                  <span class="legend-swatch lomba"></span>Pendaftaran Lomba
+                </li>
+              </ul>
+            </div>
+            <aside class="calendar-right" aria-labelledby="agenda-heading">
+              <h3 id="agenda-heading">Kegiatan Bulan Ini</h3>
+              <div class="agenda-list" id="agendaList" aria-live="polite"></div>
+            </aside>
+          </div>
+        </section>
+
+        <section
+          class="glass-card content-card instagram-card"
+          aria-labelledby="instagram-heading"
+        >
+          <div class="instagram-section-head">
+            <h2 id="instagram-heading">Yang Terbaru di Media Sosial</h2>
+            <p>
+              Ikuti informasi terbaru dari Kementerian Pendidikan dan Keilmuan BEM
+              PKN STAN melalui Instagram.
+            </p>
+          </div>
+
+          <div class="instagram-profile">
+            <img
+              src="./image/PK.webp"
+              alt=""
+              loading="lazy"
+              decoding="async"
+            />
+            <div>
+              <strong>pk.bempknstan</strong>
+              <span>
+                Akun media sosial Kementerian Pendidikan dan Keilmuan BEM PKN STAN.
+              </span>
+            </div>
+          </div>
+
+          <div
+            class="instagram-manual-grid"
+            id="instagramFeedGrid"
+            aria-label="Feed Instagram manual @pk.bempknstan"
+          ></div>
+
+          <div class="instagram-actions">
+            <a
+              class="btn btn-glass instagram-follow"
+              href="https://www.instagram.com/pk.bempknstan"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+              Follow on Instagram
+            </a>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <div data-include="footer"></div>
+  </body>
+</html>

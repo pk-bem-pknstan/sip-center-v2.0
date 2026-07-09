@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portal Info Lomba Mahasiswa - BEM PKN STAN</title>
+    <meta
+      name="description"
+      content="Cari dan filter informasi lomba terbaru untuk mahasiswa PKN STAN berdasarkan kategori, status, dan periode."
+    />
+    <meta name="theme-color" content="#19485f" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Portal Info Lomba Mahasiswa - BEM PKN STAN"
+    />
+    <meta
+      property="og:description"
+      content="Informasi lomba terbaru untuk mahasiswa PKN STAN."
+    />
+    <meta property="og:url" content="https://DOMAIN-WEBSITE/info-lomba.html" />
+    <link rel="canonical" href="https://DOMAIN-WEBSITE/info-lomba.html" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./css/style.css?v=20260709-ps-links-ig-ratio-footer" />
+    <script type="module" src="./js/script.js?v=20260709-ps-links-ig-ratio-footer"></script>
+    <link rel="icon" type="image/x-icon" href="./image/PK.ico" />
+  </head>
+  <body data-page="competitions">
+    <div data-include="header"></div>
+    <section class="hero">
+      <div class="hero-decor" aria-hidden="true">
+        <img
+          src="./image/decor/aries.svg"
+          class="hero-ornament decor-aries"
+          alt=""
+        />
+        <img
+          src="./image/decor/taurus.svg"
+          class="hero-ornament decor-taurus"
+          alt=""
+        />
+        <img
+          src="./image/decor/element1.svg"
+          class="hero-ornament decor-e1"
+          alt=""
+        />
+        <img
+          src="./image/decor/element2.svg"
+          class="hero-ornament decor-e2"
+          alt=""
+        />
+        <img
+          src="./image/decor/element4.svg"
+          class="hero-ornament decor-e4"
+          alt=""
+        />
+        <img
+          src="./image/decor/element7.svg"
+          class="hero-ornament decor-e7"
+          alt=""
+        />
+        <img
+          src="./image/decor/element9.svg"
+          class="hero-ornament decor-e9"
+          alt=""
+        />
+      </div>
+
+      <div class="container hero-content">
+        <div class="glass-badge">Sinergi Informasi Pendidikan</div>
+        <h1 class="hero-title">Portal Info Lomba</h1>
+        <p class="hero-subtitle">
+          Temukan kompetisi terbaik untuk mengembangkan potensimu.
+          Berpartisipasi, raih prestasi, dan jadikan dirimu juara selanjutnya!
+        </p>
+      </div>
+    </section>
+    <main class="main-section">
+      <div class="container">
+        <section class="glass-card" aria-labelledby="competition-heading">
+          <h2 class="visually-hidden" id="competition-heading">
+            Eksplorasi lomba
+          </h2>
+          <div class="toolbar">
+            <div class="field">
+              <label for="competition-search"
+                >Cari lomba atau penyelenggara</label
+              ><input
+                class="input"
+                id="competition-search"
+                type="search"
+                placeholder="Cari nama lomba atau penyelenggara..."
+              />
+            </div>
+            <div class="filter-group">
+              <button
+                class="filter-toggle"
+                type="button"
+                aria-expanded="false"
+                aria-controls="status-filter-panel"
+              >
+                <span id="status-filter-label">Status: Semua</span
+                ><span aria-hidden="true">&#9662;</span>
+              </button>
+              <div class="filter-panel" id="status-filter-panel" hidden></div>
+            </div>
+            <div class="filter-group">
+              <button
+                class="filter-toggle"
+                type="button"
+                aria-expanded="false"
+                aria-controls="category-filter-panel"
+              >
+                <span id="category-filter-label">Kategori: Semua</span
+                ><span aria-hidden="true">&#9662;</span>
+              </button>
+              <div class="filter-panel" id="category-filter-panel" hidden></div>
+            </div>
+            <div class="filter-group">
+              <button
+                class="filter-toggle"
+                type="button"
+                aria-expanded="false"
+                aria-controls="month-filter-panel"
+              >
+                <span id="month-filter-label">Periode: Semua</span
+                ><span aria-hidden="true">&#9662;</span>
+              </button>
+              <div class="filter-panel" id="month-filter-panel" hidden></div>
+            </div>
+            <div class="select-field">
+              <label for="competition-sort">Urutkan deadline</label
+              ><select class="select" id="competition-sort">
+                <option value="asc">Terdekat</option>
+                <option value="desc">Terlama</option>
+              </select>
+            </div>
+          </div>
+          <div class="result-bar">
+            <h2 class="section-heading">Eksplorasi Lomba</h2>
+            <span class="result-count" id="competition-count" aria-live="polite"
+              >0 lomba</span
+            >
+          </div>
+          <div
+            class="data-grid"
+            id="competitions-grid"
+            aria-live="polite"
+          ></div>
+          <div class="pagination" id="competition-pagination" hidden>
+            <button class="btn btn-secondary" type="button" id="prev-page">
+              Sebelumnya</button
+            ><span id="page-info" aria-live="polite">Halaman 1 dari 1</span
+            ><button class="btn btn-secondary" type="button" id="next-page">
+              Berikutnya
+            </button>
+          </div>
+          <a class="back-link" href="./index.html">
+            <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+            <span>Kembali ke Beranda</span>
+          </a>
+        </section>
+      </div>
+    </main>
+    <div
+      class="modal"
+      id="competition-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="competition-modal-title"
+      aria-describedby="competition-modal-description"
+      aria-hidden="true"
+      hidden
+    >
+      <div class="modal-dialog">
+        <div class="modal-header">
+          <div>
+            <h2 id="competition-modal-title">Detail Lomba</h2>
+            <p id="competition-modal-description">
+              Informasi lengkap kompetisi yang dipilih.
+            </p>
+          </div>
+          <button
+            class="modal-close"
+            type="button"
+            data-modal-close
+            aria-label="Tutup modal"
+          >
+            &times;
+          </button>
+        </div>
+        <div class="modal-body" id="competition-modal-body"></div>
+      </div>
+    </div>
+    <div data-include="footer"></div>
+  </body>
+</html>
