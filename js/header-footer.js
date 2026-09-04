@@ -4,6 +4,11 @@ export function initNavigation() {
   const toggle = document.querySelector(".nav-toggle");
   const menu = document.querySelector(".nav-list");
   if (!toggle || !menu) return;
+
+  menu.querySelectorAll(":scope > li").forEach((item, index) => {
+    item.style.setProperty("--menu-delay", `${index * 35}ms`);
+  });
+
   const close = () => {
     menu.classList.remove("open");
     toggle.setAttribute("aria-expanded", "false");
@@ -36,6 +41,7 @@ export function initSharedIcons() {
     if (href.endsWith("kti.html")) return "fa-solid fa-book-open";
     if (href.endsWith("index.html")) return "fa-solid fa-house";
     if (href.endsWith("pusat-studi.html")) return "fa-solid fa-lightbulb";
+    if (href.endsWith("arsip-kegiatan.html")) return "fa-solid fa-box-archive";
     return "";
   };
   document.querySelectorAll(".nav-link, .footer a").forEach((link) => {

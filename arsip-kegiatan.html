@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kegiatan | SIP Center</title>
+    <meta
+      name="description"
+      content="Dokumentasi kegiatan Kementerian Pendidikan dan Keilmuan BEM PKN STAN, meliputi galeri foto, rekaman kegiatan, dan dokumen pendukung."
+    />
+    <meta name="theme-color" content="#19485f" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Kegiatan - SIP Center" />
+    <meta
+      property="og:description"
+      content="Dokumentasi kegiatan Kementerian Pendidikan dan Keilmuan BEM PKN STAN."
+    />
+    <meta property="og:url" content="https://sip-center.netlify.app/arsip-kegiatan.html" />
+    <link rel="canonical" href="https://sip-center.netlify.app/arsip-kegiatan.html" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="./css/style.css?v=20260709-mobile-header-footer-corrected"
+    />
+    <script
+      type="module"
+      src="./js/script.js?v=20260709-mobile-header-footer-corrected"
+    ></script>
+    <link rel="icon" type="image/x-icon" href="./image/PK.ico" />
+
+  </head>
+
+  <body data-page="archive">
+    <div data-include="header"></div>
+
+    <section class="hero">
+      <div class="hero-decor" aria-hidden="true">
+        <img
+          src="./image/decor/aries.svg"
+          class="hero-ornament decor-aries"
+          alt=""
+        />
+        <img
+          src="./image/decor/taurus.svg"
+          class="hero-ornament decor-taurus"
+          alt=""
+        />
+        <img
+          src="./image/decor/element1.svg"
+          class="hero-ornament decor-e1"
+          alt=""
+        />
+        <img
+          src="./image/decor/element2.svg"
+          class="hero-ornament decor-e2"
+          alt=""
+        />
+        <img
+          src="./image/decor/element4.svg"
+          class="hero-ornament decor-e4"
+          alt=""
+        />
+        <img
+          src="./image/decor/element7.svg"
+          class="hero-ornament decor-e7"
+          alt=""
+        />
+        <img
+          src="./image/decor/element9.svg"
+          class="hero-ornament decor-e9"
+          alt=""
+        />
+      </div>
+
+      <div class="container hero-content">
+        <div class="glass-badge">Sinergi Informasi Pendidikan</div>
+        <h1 class="hero-title">Kegiatan</h1>
+        <p class="hero-subtitle">
+          Dokumentasi kegiatan Kementerian Pendidikan dan Keilmuan BEM PKN STAN.
+        </p>
+      </div>
+    </section>
+
+    <main class="main-section">
+      <div class="container">
+        <section class="glass-card" aria-labelledby="archive-heading">
+          <div class="archive-intro">
+            <div class="archive-intro-copy">
+              <h2 class="section-heading" id="archive-heading">
+                Dokumentasi Kegiatan
+              </h2>
+              <p>
+                Jelajahi galeri foto, rekaman Zoom, serta dokumen pendukung dari
+                kegiatan yang telah dilaksanakan.
+              </p>
+            </div>
+          </div>
+
+          <div class="archive-toolbar" aria-label="Filter kegiatan">
+            <div class="archive-field">
+              <label for="archive-search">Cari kegiatan</label>
+              <input
+                class="input"
+                id="archive-search"
+                type="search"
+                placeholder="Cari judul, kategori, atau deskripsi kegiatan..."
+              />
+            </div>
+
+            <div class="archive-field">
+              <label for="archive-category">Kategori</label>
+              <div class="archive-select" data-custom-select>
+                <select
+                  class="archive-native-select"
+                  id="archive-category"
+                  aria-label="Kategori"
+                >
+                  <option value="">Semua kategori</option>
+                </select>
+                <button
+                  class="archive-select-trigger"
+                  type="button"
+                  aria-haspopup="listbox"
+                  aria-expanded="false"
+                >
+                  <span class="archive-select-value">Semua kategori</span>
+                  <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+                </button>
+                <div class="archive-select-menu" role="listbox"></div>
+              </div>
+            </div>
+
+            <div class="archive-field">
+              <label for="archive-year">Tahun</label>
+              <div class="archive-select" data-custom-select>
+                <select
+                  class="archive-native-select"
+                  id="archive-year"
+                  aria-label="Tahun"
+                >
+                  <option value="">Semua tahun</option>
+                </select>
+                <button
+                  class="archive-select-trigger"
+                  type="button"
+                  aria-haspopup="listbox"
+                  aria-expanded="false"
+                >
+                  <span class="archive-select-value">Semua tahun</span>
+                  <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+                </button>
+                <div class="archive-select-menu" role="listbox"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="archive-grid" id="archive-grid" aria-live="polite"></div>
+
+          <div class="archive-footer-area">
+            <a class="back-link" href="./index.html">
+              <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+              <span>Kembali ke Beranda</span>
+            </a>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <div
+      class="modal gallery-modal"
+      id="gallery-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="gallery-title"
+      aria-hidden="true"
+      hidden
+    >
+      <div class="modal-dialog gallery-dialog">
+        <div class="modal-header gallery-header">
+          <h2 id="gallery-title">Galeri Kegiatan</h2>
+          <button
+            class="modal-close gallery-close"
+            type="button"
+            data-modal-close
+            aria-label="Tutup galeri"
+          >
+            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+          </button>
+        </div>
+        <div class="modal-body gallery-grid" id="gallery-grid"></div>
+      </div>
+    </div>
+
+    <div data-include="footer"></div>
+  </body>
+</html>

@@ -8,6 +8,8 @@ export const CONFIG = {
     "https://docs.google.com/spreadsheets/d/e/2PACX-1vQQYdrNLvr8K6w61u4u_TfL_85FGnbeTfyRbnVHnvfdE4UV9yw4nEnNNq7Sr947zPIIQWiVvv_3zqKj/pub?gid=904917174&output=csv",
   ktiUrl:
     "https://docs.google.com/spreadsheets/d/e/2PACX-1vT_1Saug5gRlQ-rt4es9uVEVvJ-R-6hRetoCW1XnRsUwALiAYc99TcMbQ6pTIxDM6rfGvT7viaxg7BC/pub?output=csv",
+  archiveUrl:
+    "https://docs.google.com/spreadsheets/d/e/2PACX-1vQLeaIeZ0MCstl7d-KmZrMCpizChnrAvNaLIEmRCL8RxF0YvHRiNaxpZ0Adqaew6eHN-bj0SBVlZL2q/pub?gid=0&single=true&output=csv",
   calendarUrl:
     "https://docs.google.com/spreadsheets/d/e/2PACX-1vRvtEoAsEAi6On8t16DKSusYyR54b4TLM7C2Vb7DbMvFQALQdl2Irg98wOoSxJifp65WQWfRyq61wxG/pubhtml?gid=0&single=true",
   instagramUrl:
@@ -22,6 +24,7 @@ export const ALLOWED_HOSTS = [
   "images.unsplash.com",
   "instagram.com",
   "maps.google.com",
+  "zoom.us",
   "bit.ly",
   "s.id",
   "linktr.ee",
@@ -108,6 +111,7 @@ const ID_MONTHS = {
   april: 4,
   apr: 4,
   mei: 5,
+  may: 5,
   juni: 6,
   jun: 6,
   juli: 7,
@@ -115,14 +119,17 @@ const ID_MONTHS = {
   agustus: 8,
   agu: 8,
   ags: 8,
+  aug: 8,
   september: 9,
   sep: 9,
   oktober: 10,
   okt: 10,
+  oct: 10,
   november: 11,
   nov: 11,
   desember: 12,
   des: 12,
+  dec: 12,
 };
 function getCache(key) {
   try {
@@ -219,6 +226,18 @@ export function toISODate(value) {
     const month = ID_MONTHS[idMonthMatch[2]];
     return month ? buildISODate(year, month, Number(idMonthMatch[1])) : "";
   }
+
+  // Menjaga kompatibilitas parser kalender lama untuk format tanggal yang
+  // masih dapat dipahami Date, setelah format eksplisit di atas diperiksa.
+  const parsed = new Date(value.trim());
+  if (!Number.isNaN(parsed.getTime())) {
+    return buildISODate(
+      parsed.getFullYear(),
+      parsed.getMonth() + 1,
+      parsed.getDate(),
+    );
+  }
+
   return "";
 }
 export async function fetchWithTimeout(url, format) {

@@ -1,3 +1,4 @@
+/* Desktop */
 .site-header {
   position: sticky;
   top: 0;
@@ -251,31 +252,57 @@
   font-size: 0.8rem;
 }
 
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 14px;
+}
+
+.footer-brand img {
+  width: 46px;
+  height: 46px;
+  flex: 0 0 46px;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 16px rgba(25, 72, 95, 0.16));
+}
+
+.footer-brand h2 {
+  margin: 0;
+}
+
+
+/* Tablet */
 @media (max-width: 1180px) {
   .nav-link {
     padding-inline: 8px;
     font-size: 0.76rem;
   }
 }
+
 @media (min-width: 641px) and (max-width: 1180px) {
   .navbar {
     min-height: 72px;
     gap: 14px;
   }
+
   .brand-logo-shell {
     width: 58px;
     height: 58px;
-    border-radius: 0;
   }
+
   .brand-copy strong {
     font-size: 0.88rem;
   }
+
   .brand small {
     font-size: 0.62rem;
   }
+
   .nav-toggle {
     display: none;
   }
+
   .nav-list {
     position: static;
     display: flex !important;
@@ -288,6 +315,7 @@
     transform: none;
     pointer-events: auto;
   }
+
   .nav-link {
     width: 46px;
     height: 46px;
@@ -297,19 +325,25 @@
     background: rgba(255, 255, 255, 0.36);
     font-size: 1rem;
   }
+
   .nav-link i {
     font-size: 1rem;
   }
+
   .nav-text {
     display: none;
   }
 }
+
 @media (max-width: 768px) {
   .footer-container {
     grid-template-columns: 1fr;
     gap: 24px;
   }
 }
+
+
+/* Mobile */
 @media (max-width: 640px) {
   .site-header {
     background:
@@ -321,37 +355,59 @@
       ),
       rgba(255, 255, 255, 0.76);
   }
+
+  .site-header .container {
+    width: calc(100% - 28px);
+    max-width: 720px;
+  }
+
   .navbar {
-    min-height: 56px;
+    min-height: 62px;
     gap: 8px;
   }
+
   .brand {
     gap: 7px;
   }
+
   .brand-logo-shell {
-    width: 46px;
-    height: 46px;
-    border-radius: 0;
+    width: 48px;
+    height: 48px;
   }
+
   .brand-copy strong {
     font-size: 0.74rem;
   }
+
   .brand small {
     font-size: 0.52rem;
   }
+
   .nav-toggle {
     display: block;
     flex: 0 0 auto;
-    width: 44px;
-    height: 44px;
+    width: 46px;
+    height: 46px;
     border-radius: 16px;
+    box-shadow: 0 10px 20px rgba(25, 72, 95, 0.11);
   }
+
   .nav-toggle span,
   .nav-toggle::before,
   .nav-toggle::after {
     width: 22px;
+    height: 2px;
     margin: 5px auto;
   }
+
+  .nav-toggle[aria-expanded="true"]::before {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .nav-toggle[aria-expanded="true"]::after {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
   .nav-list {
     position: absolute;
     top: calc(100% + 8px);
@@ -381,11 +437,13 @@
       opacity 0.22s ease,
       transform 0.22s cubic-bezier(0.2, 0.9, 0.2, 1);
   }
+
   .nav-list.open {
     opacity: 1;
     transform: translateY(0) scale(1);
     pointer-events: auto;
   }
+
   .nav-link {
     justify-content: flex-start;
     width: 100%;
@@ -394,245 +452,23 @@
     border-radius: 16px;
     background: rgba(255, 255, 255, 0.56);
     font-size: 0.9rem;
-    animation: menuItemFloat 0.28s cubic-bezier(0.2, 0.9, 0.2, 1) both;
   }
-  .nav-list.open li:nth-child(2) .nav-link {
-    animation-delay: 35ms;
+
+  /* base.css menonaktifkan motion di touch/mobile secara global.
+     Aktifkan kembali hanya stagger menu saat dibuka; reduced-motion tetap dihormati. */
+  .nav-list.open > li > .nav-link {
+    animation: menuItemFloat 0.28s cubic-bezier(0.2, 0.9, 0.2, 1) both !important;
+    animation-delay: var(--menu-delay, 0ms) !important;
   }
-  .nav-list.open li:nth-child(3) .nav-link {
-    animation-delay: 70ms;
+
+  @media (prefers-reduced-motion: reduce) {
+    .nav-list.open > li > .nav-link {
+      animation: none !important;
+    }
   }
-  .nav-list.open li:nth-child(4) .nav-link {
-    animation-delay: 105ms;
-  }
+
   .nav-text {
     display: inline;
-  }
-  @keyframes menuItemFloat {
-    from {
-      opacity: 0;
-      transform: translateY(-6px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-}
-
-
-/* Netlify/mobile polish */
-@media (max-width: 640px) {
-  .site-header .container {
-    width: min(92%, 720px);
-  }
-  .navbar {
-    min-height: 54px;
-  }
-  .brand-logo-shell {
-    width: 42px;
-    height: 42px;
-  }
-  .nav-toggle {
-    width: 40px;
-    height: 40px;
-    border-radius: 14px;
-  }
-  .nav-toggle span,
-  .nav-toggle::before,
-  .nav-toggle::after {
-    width: 20px;
-    margin: 4px auto;
-  }
-  .nav-toggle[aria-expanded="true"]::before {
-    transform: translateY(6px) rotate(45deg);
-  }
-  .nav-toggle[aria-expanded="true"]::after {
-    transform: translateY(-6px) rotate(-45deg);
-  }
-
-  .footer {
-    padding: 58px 0 22px;
-  }
-  .footer .container {
-    width: min(92%, 720px);
-  }
-  .footer-container {
-    gap: 30px;
-    padding-inline: 8px;
-  }
-  .footer h2 {
-    color: #19485f;
-    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.18);
-  }
-  .footer h3 {
-    color: var(--accent-lime);
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
-  }
-  .footer p,
-  .footer a {
-    color: rgba(255, 255, 255, 0.90);
-  }
-  .footer-bottom {
-    color: rgba(255, 255, 255, 0.66);
-  }
-  .footer a:hover {
-    color: var(--accent-lime);
-  }
-}
-
-.footer-brand {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin: 0 0 14px;
-}
-.footer-brand img {
-  width: 46px;
-  height: 46px;
-  flex: 0 0 46px;
-  object-fit: contain;
-  filter: drop-shadow(0 8px 16px rgba(25, 72, 95, 0.16));
-}
-.footer-brand h2 {
-  margin: 0;
-}
-
-@media (max-width: 640px) {
-  .footer-brand {
-    gap: 10px;
-    margin-bottom: 12px;
-  }
-  .footer-brand img {
-    width: 42px;
-    height: 42px;
-    flex-basis: 42px;
-  }
-}
-
-/* Final mobile consistency polish */
-@media (max-width: 640px) {
-  .site-header .container {
-    width: min(94%, 720px);
-  }
-
-  .navbar {
-    min-height: 48px;
-  }
-
-  .brand-logo-shell {
-    width: 38px;
-    height: 38px;
-  }
-
-  .nav-toggle {
-    width: 38px;
-    height: 38px;
-    border-radius: 14px;
-    box-shadow: 0 8px 18px rgba(25, 72, 95, 0.10);
-  }
-
-  .nav-toggle span,
-  .nav-toggle::before,
-  .nav-toggle::after {
-    width: 19px;
-    height: 2px;
-    margin: 4px auto;
-  }
-
-  .footer {
-    padding: 34px 0 14px;
-  }
-
-  .footer .container {
-    width: min(92%, 720px);
-  }
-
-  .footer-container {
-    gap: 16px;
-    padding: 0 6px 18px;
-  }
-
-  .footer-brand {
-    gap: 8px;
-    margin-bottom: 7px;
-  }
-
-  .footer-brand img {
-    width: 30px;
-    height: 30px;
-    flex-basis: 30px;
-  }
-
-  .footer h2 {
-    font-size: 1.02rem;
-    line-height: 1.15;
-  }
-
-  .footer h3 {
-    margin-bottom: 9px;
-    font-size: 0.96rem;
-    line-height: 1.15;
-  }
-
-  .footer p,
-  .footer a {
-    font-size: 0.82rem;
-    line-height: 1.45;
-  }
-
-  .footer li {
-    margin-bottom: 6px;
-  }
-
-  .footer a {
-    gap: 8px;
-  }
-
-  .footer-bottom {
-    padding-top: 14px;
-    font-size: 0.74rem;
-    line-height: 1.55;
-  }
-}
-
-/* Mobile header/footer correction: match normal mobile web header height and compact footer spacing */
-@media (max-width: 640px) {
-  .site-header .container {
-    width: calc(100% - 28px);
-    max-width: 720px;
-  }
-
-  .navbar {
-    min-height: 62px;
-  }
-
-  .brand-logo-shell {
-    width: 48px;
-    height: 48px;
-  }
-
-  .nav-toggle {
-    width: 46px;
-    height: 46px;
-    border-radius: 16px;
-    box-shadow: 0 10px 20px rgba(25, 72, 95, 0.11);
-  }
-
-  .nav-toggle span,
-  .nav-toggle::before,
-  .nav-toggle::after {
-    width: 22px;
-    height: 2px;
-    margin: 5px auto;
-  }
-
-  .nav-toggle[aria-expanded="true"]::before {
-    transform: translateY(7px) rotate(45deg);
-  }
-
-  .nav-toggle[aria-expanded="true"]::after {
-    transform: translateY(-7px) rotate(-45deg);
   }
 
   .footer {
@@ -669,6 +505,7 @@
     margin: 0 0 8px;
     font-size: 1.02rem;
     line-height: 1.18;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
   }
 
   .footer section > p {
@@ -692,6 +529,7 @@
 
   .footer p,
   .footer a {
+    color: rgba(255, 255, 255, 0.9);
     font-size: 0.9rem;
     line-height: 1.35;
   }
@@ -708,7 +546,20 @@
 
   .footer-bottom {
     padding-top: 10px;
+    color: rgba(255, 255, 255, 0.66);
     font-size: 0.82rem;
     line-height: 1.38;
+  }
+
+  @keyframes menuItemFloat {
+    from {
+      opacity: 0;
+      transform: translateY(-6px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }

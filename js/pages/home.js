@@ -4,6 +4,7 @@ import {
   fetchWithTimeout,
   createState,
   getSafeUrl,
+  toISODate,
 } from "../utils.js";
 
 const CALENDAR_COLUMNS = {
@@ -58,54 +59,6 @@ function readCalendarValue(record, key) {
     const value = record[alias];
     if (value !== undefined && String(value).trim())
       return String(value).trim();
-  }
-  return "";
-}
-export function toISODate(value) {
-  const raw = String(value || "").trim();
-  if (!raw) return "";
-  const isoMatch = raw.match(/^(\d{4})-(\d{1,2})-(\d{1,2})$/);
-  if (isoMatch)
-    return `${isoMatch[1]}-${isoMatch[2].padStart(2, "0")}-${isoMatch[3].padStart(2, "0")}`;
-  const slashMatch = raw.match(/^(\d{1,2})[/-](\d{1,2})[/-](\d{4})$/);
-  if (slashMatch)
-    return `${slashMatch[3]}-${slashMatch[2].padStart(2, "0")}-${slashMatch[1].padStart(2, "0")}`;
-  const monthNames = {
-    januari: "01",
-    jan: "01",
-    februari: "02",
-    feb: "02",
-    maret: "03",
-    mar: "03",
-    april: "04",
-    apr: "04",
-    mei: "05",
-    may: "05",
-    juni: "06",
-    jun: "06",
-    juli: "07",
-    jul: "07",
-    agustus: "08",
-    agu: "08",
-    aug: "08",
-    september: "09",
-    sep: "09",
-    oktober: "10",
-    okt: "10",
-    oct: "10",
-    november: "11",
-    nov: "11",
-    desember: "12",
-    des: "12",
-    dec: "12",
-  };
-  const nameMatch = raw.toLowerCase().match(/^(\d{1,2})\s+([a-z]+)\s+(\d{4})$/);
-  if (nameMatch && monthNames[nameMatch[2]]) {
-    return `${nameMatch[3]}-${monthNames[nameMatch[2]]}-${nameMatch[1].padStart(2, "0")}`;
-  }
-  const parsed = new Date(raw);
-  if (!Number.isNaN(parsed.getTime())) {
-    return `${parsed.getFullYear()}-${String(parsed.getMonth() + 1).padStart(2, "0")}-${String(parsed.getDate()).padStart(2, "0")}`;
   }
   return "";
 }

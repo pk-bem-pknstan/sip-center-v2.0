@@ -18,8 +18,8 @@
       property="og:description"
       content="Repositori pencarian karya tulis ilmiah mahasiswa PKN STAN."
     />
-    <meta property="og:url" content="https://DOMAIN-WEBSITE/kti.html" />
-    <link rel="canonical" href="https://DOMAIN-WEBSITE/kti.html" />
+    <meta property="og:url" content="https://sip-center.netlify.app/kti.html" />
+    <link rel="canonical" href="https://sip-center.netlify.app/kti.html" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -83,7 +83,7 @@
     <main class="main-section">
       <div class="container">
         <section class="glass-card" aria-labelledby="kti-heading">
-          <div class="toolbar">
+          <div class="toolbar kti-toolbar">
             <div class="field">
               <label for="kti-search">Cari karya tulis</label
               ><input
@@ -92,6 +92,12 @@
                 type="search"
                 placeholder="Cari judul karya tulis, penulis, atau tema..."
               />
+            </div>
+            <div class="select-field kti-filter-field">
+              <label for="kti-theme-filter">Filter tema</label>
+              <select class="select" id="kti-theme-filter">
+                <option value="">Semua tema</option>
+              </select>
             </div>
           </div>
           <div class="result-bar">
@@ -103,6 +109,15 @@
             >
           </div>
           <div class="data-grid" id="kti-grid" aria-live="polite"></div>
+          <div class="pagination kti-pagination" id="kti-pagination" hidden>
+            <button class="btn btn-secondary" type="button" id="kti-prev-page">
+              Sebelumnya
+            </button>
+            <span id="kti-page-info" aria-live="polite">Halaman 1 dari 1</span>
+            <button class="btn btn-secondary" type="button" id="kti-next-page">
+              Berikutnya
+            </button>
+          </div>
           <a class="back-link" href="./index.html">
             <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
             <span>Kembali ke Beranda</span>

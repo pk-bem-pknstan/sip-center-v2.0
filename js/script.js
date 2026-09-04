@@ -10,13 +10,14 @@ import {
   initCalendar,
   initInstagramFeed,
   parseCalendarRows,
-  toISODate,
 } from "./pages/home.js";
 import { initServices } from "./pages/layanan.js";
 import { initCompetitions } from "./pages/info-lomba.js";
 import { initRegulations } from "./pages/peraturan.js";
 import { initKTI } from "./pages/kti.js";
-import { getSafeUrl, parseCSV, fetchWithTimeout } from "./utils.js";
+import { initArchive } from "./pages/arsip-kegiatan.js";
+import { initPusatStudi } from "./pages/pusat-studi.js";
+import { getSafeUrl, parseCSV, fetchWithTimeout, toISODate } from "./utils.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   loadPartials();
@@ -32,6 +33,8 @@ document.addEventListener("DOMContentLoaded", () => {
   initCompetitions();
   initRegulations();
   initKTI();
+  initArchive();
+  initPusatStudi();
 });
 
 // Menjaga kompatibilitas jika API ini digunakan secara global di masa lalu
